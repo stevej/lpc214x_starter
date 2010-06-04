@@ -1,0 +1,14 @@
+Starter Kit for writing C and ASM on the LPC214x series, specifically the SparkFun UberBoard v2 on OS X 10.6.
+
+You are expected to have:
+
+* An UberBoard v2
+** http://www.sparkfun.com/commerce/product_info.php?products_id=555
+* arm-none-eabi cross-compiler toolchain installed.
+** http://github.com/stevej/summon-arm-toolchain contains a starter script for your Mac.
+* A sense of adventure
+** Child-like wonder will also work.
+
+It all started with Sparkfun's "USB Bootloader
+Tutorial":http://www.sparkfun.com/tutorial/USB_Bootloader/USB_Bootloader_UberBoard_Tutorial_Code.zip
+which I modified to work with the ARM-GCC toolchain on Snow Leopard.
