@@ -1,6 +1,6 @@
 /******************************************************************************
  *   LPC214X.h:  Header file for Philips LPC214x Family Microprocessors
- *   The header file is the super set of all hardware definition of the 
+ *   The header file is the super set of all hardware definition of the
  *   peripherals for the LPC214x family microprocessor.
  *
  *   Copyright(C) 2006, Philips Semiconductor
@@ -11,14 +11,14 @@
  *   2005.10.13  ver 1.01    Removed CSPR and DC_REVISION register.
  *                           CSPR can not be accessed at the user level,
  *                           DC_REVISION is no long available.
- *                           All registers use "volatile unsigned long". 
+ *                           All registers use "volatile unsigned long".
 ******************************************************************************/
 
 #ifndef __LPC214x_H
 #define __LPC214x_H
 
 /* Vectored Interrupt Controller (VIC) */
-#define VIC_BASE_ADDR	0xFFFFF000
+#define VIC_BASE_ADDR   0xFFFFF000
 
 #define VICIRQStatus   (*(volatile unsigned long *)(VIC_BASE_ADDR + 0x000))
 #define VICFIQStatus   (*(volatile unsigned long *)(VIC_BASE_ADDR + 0x004))
@@ -65,13 +65,13 @@
 #define VICVectCntl15  (*(volatile unsigned long *)(VIC_BASE_ADDR + 0x23C))
 
 /* Pin Connect Block */
-#define PINSEL_BASE_ADDR	0xE002C000
+#define PINSEL_BASE_ADDR        0xE002C000
 #define PINSEL0        (*(volatile unsigned long *)(PINSEL_BASE_ADDR + 0x00))
 #define PINSEL1        (*(volatile unsigned long *)(PINSEL_BASE_ADDR + 0x04))
 #define PINSEL2        (*(volatile unsigned long *)(PINSEL_BASE_ADDR + 0x14))
 
 /* General Purpose Input/Output (GPIO) */
-#define GPIO_BASE_ADDR		0xE0028000
+#define GPIO_BASE_ADDR          0xE0028000
 #define IOPIN0         (*(volatile unsigned long *)(GPIO_BASE_ADDR + 0x00))
 #define IOSET0         (*(volatile unsigned long *)(GPIO_BASE_ADDR + 0x04))
 #define IODIR0         (*(volatile unsigned long *)(GPIO_BASE_ADDR + 0x08))
@@ -82,23 +82,23 @@
 #define IOCLR1         (*(volatile unsigned long *)(GPIO_BASE_ADDR + 0x1C))
 
 /* Fast I/O setup */
-#define FIO_BASE_ADDR		0x3FFFC000
-#define FIO0DIR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x00)) 
+#define FIO_BASE_ADDR           0x3FFFC000
+#define FIO0DIR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x00))
 #define FIO0MASK       (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x10))
 #define FIO0PIN        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x14))
 #define FIO0SET        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x18))
 #define FIO0CLR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x1C))
-#define FIO1DIR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x20)) 
+#define FIO1DIR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x20))
 #define FIO1MASK       (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x30))
 #define FIO1PIN        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x34))
 #define FIO1SET        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x38))
 #define FIO1CLR        (*(volatile unsigned long *)(FIO_BASE_ADDR + 0x3C))
 
 /* System Control Block(SCB) modules include Memory Accelerator Module,
-Phase Locked Loop, VPB divider, Power Control, External Interrupt, 
+Phase Locked Loop, VPB divider, Power Control, External Interrupt,
 Reset, and Code Security/Debugging */
 
-#define SCB_BASE_ADDR	0xE01FC000
+#define SCB_BASE_ADDR   0xE01FC000
 
 /* Memory Accelerator Module (MAM) */
 #define MAMCR          (*(volatile unsigned long *)(SCB_BASE_ADDR + 0x000))
@@ -134,10 +134,10 @@ Reset, and Code Security/Debugging */
 #define RSIR           (*(volatile unsigned long *)(SCB_BASE_ADDR + 0x180))
 
 /* System Controls and Status */
-#define SCS            (*(volatile unsigned long *)(SCB_BASE_ADDR + 0x1A0))	
+#define SCS            (*(volatile unsigned long *)(SCB_BASE_ADDR + 0x1A0))
 
 /* Timer 0 */
-#define TMR0_BASE_ADDR		0xE0004000
+#define TMR0_BASE_ADDR          0xE0004000
 #define T0IR           (*(volatile unsigned long *)(TMR0_BASE_ADDR + 0x00))
 #define T0TCR          (*(volatile unsigned long *)(TMR0_BASE_ADDR + 0x04))
 #define T0TC           (*(volatile unsigned long *)(TMR0_BASE_ADDR + 0x08))
@@ -157,7 +157,7 @@ Reset, and Code Security/Debugging */
 #define T0CTCR         (*(volatile unsigned long *)(TMR0_BASE_ADDR + 0x70))
 
 /* Timer 1 */
-#define TMR1_BASE_ADDR		0xE0008000
+#define TMR1_BASE_ADDR          0xE0008000
 #define T1IR           (*(volatile unsigned long *)(TMR1_BASE_ADDR + 0x00))
 #define T1TCR          (*(volatile unsigned long *)(TMR1_BASE_ADDR + 0x04))
 #define T1TC           (*(volatile unsigned long *)(TMR1_BASE_ADDR + 0x08))
@@ -177,7 +177,7 @@ Reset, and Code Security/Debugging */
 #define T1CTCR         (*(volatile unsigned long *)(TMR1_BASE_ADDR + 0x70))
 
 /* Pulse Width Modulator (PWM) */
-#define PWM_BASE_ADDR		0xE0014000
+#define PWM_BASE_ADDR           0xE0014000
 #define PWMIR          (*(volatile unsigned long *)(PWM_BASE_ADDR + 0x00))
 #define PWMTCR         (*(volatile unsigned long *)(PWM_BASE_ADDR + 0x04))
 #define PWMTC          (*(volatile unsigned long *)(PWM_BASE_ADDR + 0x08))
@@ -196,7 +196,7 @@ Reset, and Code Security/Debugging */
 #define PWMLER         (*(volatile unsigned long *)(PWM_BASE_ADDR + 0x50))
 
 /* Universal Asynchronous Receiver Transmitter 0 (UART0) */
-#define UART0_BASE_ADDR		0xE000C000
+#define UART0_BASE_ADDR         0xE000C000
 #define U0RBR          (*(volatile unsigned long *)(UART0_BASE_ADDR + 0x00))
 #define U0THR          (*(volatile unsigned long *)(UART0_BASE_ADDR + 0x00))
 #define U0DLL          (*(volatile unsigned long *)(UART0_BASE_ADDR + 0x00))
@@ -214,7 +214,7 @@ Reset, and Code Security/Debugging */
 #define U0TER          (*(volatile unsigned long *)(UART0_BASE_ADDR + 0x30))
 
 /* Universal Asynchronous Receiver Transmitter 1 (UART1) */
-#define UART1_BASE_ADDR		0xE0010000
+#define UART1_BASE_ADDR         0xE0010000
 #define U1RBR          (*(volatile unsigned long *)(UART1_BASE_ADDR + 0x00))
 #define U1THR          (*(volatile unsigned long *)(UART1_BASE_ADDR + 0x00))
 #define U1DLL          (*(volatile unsigned long *)(UART1_BASE_ADDR + 0x00))
@@ -232,7 +232,7 @@ Reset, and Code Security/Debugging */
 #define U1TER          (*(volatile unsigned long *)(UART1_BASE_ADDR + 0x30))
 
 /* I2C Interface 0 */
-#define I2C0_BASE_ADDR		0xE001C000
+#define I2C0_BASE_ADDR          0xE001C000
 #define I20CONSET      (*(volatile unsigned long *)(I2C0_BASE_ADDR + 0x00))
 #define I20STAT        (*(volatile unsigned long *)(I2C0_BASE_ADDR + 0x04))
 #define I20DAT         (*(volatile unsigned long *)(I2C0_BASE_ADDR + 0x08))
@@ -242,7 +242,7 @@ Reset, and Code Security/Debugging */
 #define I20CONCLR      (*(volatile unsigned long *)(I2C0_BASE_ADDR + 0x18))
 
 /* I2C Interface 1 */
-#define I2C1_BASE_ADDR		0xE005C000
+#define I2C1_BASE_ADDR          0xE005C000
 #define I21CONSET      (*(volatile unsigned long *)(I2C1_BASE_ADDR + 0x00))
 #define I21STAT        (*(volatile unsigned long *)(I2C1_BASE_ADDR + 0x04))
 #define I21DAT         (*(volatile unsigned long *)(I2C1_BASE_ADDR + 0x08))
@@ -252,7 +252,7 @@ Reset, and Code Security/Debugging */
 #define I21CONCLR      (*(volatile unsigned long *)(I2C1_BASE_ADDR + 0x18))
 
 /* SPI0 (Serial Peripheral Interface 0) */
-#define SPI0_BASE_ADDR		0xE0020000
+#define SPI0_BASE_ADDR          0xE0020000
 #define S0SPCR         (*(volatile unsigned long *)(SPI0_BASE_ADDR + 0x00))
 #define S0SPSR         (*(volatile unsigned long *)(SPI0_BASE_ADDR + 0x04))
 #define S0SPDR         (*(volatile unsigned long *)(SPI0_BASE_ADDR + 0x08))
@@ -260,7 +260,7 @@ Reset, and Code Security/Debugging */
 #define S0SPINT        (*(volatile unsigned long *)(SPI0_BASE_ADDR + 0x1C))
 
 /* SSP Controller */
-#define SSP_BASE_ADDR		0xE0068000
+#define SSP_BASE_ADDR           0xE0068000
 #define SSPCR0         (*(volatile unsigned long * )(SSP_BASE_ADDR + 0x00))
 #define SSPCR1         (*(volatile unsigned long * )(SSP_BASE_ADDR + 0x04))
 #define SSPDR          (*(volatile unsigned long * )(SSP_BASE_ADDR + 0x08))
@@ -272,7 +272,7 @@ Reset, and Code Security/Debugging */
 #define SSPICR         (*(volatile unsigned long * )(SSP_BASE_ADDR + 0x20))
 
 /* Real Time Clock */
-#define RTC_BASE_ADDR		0xE0024000
+#define RTC_BASE_ADDR           0xE0024000
 #define ILR            (*(volatile unsigned long *)(RTC_BASE_ADDR + 0x00))
 #define CTC            (*(volatile unsigned long *)(RTC_BASE_ADDR + 0x04))
 #define CCR            (*(volatile unsigned long *)(RTC_BASE_ADDR + 0x08))
@@ -301,7 +301,7 @@ Reset, and Code Security/Debugging */
 #define PREFRAC        (*(volatile unsigned long *)(RTC_BASE_ADDR + 0x84))
 
 /* A/D Converter 0 (AD0) */
-#define AD0_BASE_ADDR		0xE0034000
+#define AD0_BASE_ADDR           0xE0034000
 #define AD0CR          (*(volatile unsigned long *)(AD0_BASE_ADDR + 0x00))
 #define AD0GDR         (*(volatile unsigned long *)(AD0_BASE_ADDR + 0x04))
 #define AD0STAT        (*(volatile unsigned long *)(AD0_BASE_ADDR + 0x30))
@@ -317,7 +317,7 @@ Reset, and Code Security/Debugging */
 
 #define ADGSR          (*(volatile unsigned long *)(AD0_BASE_ADDR + 0x08))
 /* A/D Converter 1 (AD1) */
-#define AD1_BASE_ADDR		0xE0060000
+#define AD1_BASE_ADDR           0xE0060000
 #define AD1CR          (*(volatile unsigned long *)(AD1_BASE_ADDR + 0x00))
 #define AD1GDR         (*(volatile unsigned long *)(AD1_BASE_ADDR + 0x04))
 #define AD1STAT        (*(volatile unsigned long *)(AD1_BASE_ADDR + 0x30))
@@ -332,18 +332,18 @@ Reset, and Code Security/Debugging */
 #define AD1DR7         (*(volatile unsigned long *)(AD1_BASE_ADDR + 0x2C))
 
 /* D/A Converter */
-#define DAC_BASE_ADDR		0xE006C000
+#define DAC_BASE_ADDR           0xE006C000
 #define DACR           (*(volatile unsigned long *)(DAC_BASE_ADDR + 0x00))
 
 /* Watchdog */
-#define WDG_BASE_ADDR		0xE0000000
+#define WDG_BASE_ADDR           0xE0000000
 #define WDMOD          (*(volatile unsigned long *)(WDG_BASE_ADDR + 0x00))
 #define WDTC           (*(volatile unsigned long *)(WDG_BASE_ADDR + 0x04))
 #define WDFEED         (*(volatile unsigned long *)(WDG_BASE_ADDR + 0x08))
 #define WDTV           (*(volatile unsigned long *)(WDG_BASE_ADDR + 0x0C))
 
 /* USB Controller */
-#define USB_BASE_ADDR		0xE0090000			/* USB Base Address */
+#define USB_BASE_ADDR           0xE0090000                      /* USB Base Address */
 /* Device Interrupt Registers */
 #define DEV_INT_STAT    (*(volatile unsigned long *)(USB_BASE_ADDR + 0x00))
 #define DEV_INT_EN      (*(volatile unsigned long *)(USB_BASE_ADDR + 0x04))
@@ -392,8 +392,7 @@ Reset, and Code Security/Debugging */
 #define NDD_REQ_INT_SET     (*((volatile unsigned long *)USB_BASE_ADDR + 0xB4))
 #define SYS_ERR_INT_STAT    (*((volatile unsigned long *)USB_BASE_ADDR + 0xB8))
 #define SYS_ERR_INT_CLR     (*((volatile unsigned long *)USB_BASE_ADDR + 0xBC))
-#define SYS_ERR_INT_SET     (*((volatile unsigned long *)USB_BASE_ADDR + 0xC0))    
+#define SYS_ERR_INT_SET     (*((volatile unsigned long *)USB_BASE_ADDR + 0xC0))
 #define MODULE_ID           (*((volatile unsigned long *)USB_BASE_ADDR + 0xFC))
 
 #endif  // __LPC214x_H
-

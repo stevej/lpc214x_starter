@@ -18,7 +18,7 @@ MEMORY
 {
     /*ROM set to 0x20000 where the USB bootloader ends and main code begins*/
     /*Reduction to 0x10000 on 11-6-07 to incorporate new user settings and serial number*/
-	ROM (rx) : ORIGIN = 0x00010000, LENGTH = 380k
+    ROM (rx) : ORIGIN = 0x00010000, LENGTH = 380k
     RAM (rw) : ORIGIN = 0x40000000, LENGTH = 32k
 }
 
